@@ -14,11 +14,14 @@
       "hero.from": "Фото из серии",
       "support.short": "Поддержать",
       "support.eyebrow": "Поддержать автора",
-      "support.title": "Буду вам очень благодарен, если поддержите моё творчество!",
+      "support.title": "Снимаю автомобили,\nмечтаю о своём.\nБуду благодарен, если поддержишь моё творчество!",
       "support.sub": "Все фотографии можно смотреть и скачивать бесплатно. Если они вам понравились, можно поддержать финансово, а также отметить в инстаграме.",
       "support.or": "или можете скопировать номер карты",
       "support.copy": "Копировать",
       "support.copied": "Номер карты скопирован",
+      "goal.label": "Цель",
+      "goal.title": "Я снимаю чужие машины. Пора снять свою.",
+      "goal.sub": "Собираю на свой автомобиль, чтобы ездить туда, куда не доходят маршрутки, и привозить оттуда новые серии. Каждый донат приближает первую из них.",
       "support.soon": "Здесь будет ваша ссылка на оплату (config.js)",
       "series.back": "Все серии",
       "series.zip": "Скачать все фото · ZIP",
@@ -39,11 +42,14 @@
       "hero.from": "From the series",
       "support.short": "Support",
       "support.eyebrow": "Support the author",
-      "support.title": "I'd be very grateful if you supported my work!",
+      "support.title": "I photograph cars,\nand dream of my own.\nI'd be grateful if you supported my work!",
       "support.sub": "All photos are free to view and download. If you liked them, you can support me financially or tag me on Instagram.",
       "support.or": "or copy the card number",
       "support.copy": "Copy",
       "support.copied": "Card number copied",
+      "goal.label": "Goal",
+      "goal.title": "I photograph other people's cars. Time to shoot my own.",
+      "goal.sub": "I'm saving up for a car of my own, to reach places the buses don't go and bring back new series from there. Every donation brings the first one closer.",
       "support.soon": "Your payment link goes here (config.js)",
       "series.back": "All series",
       "series.zip": "Download all · ZIP",
@@ -64,11 +70,14 @@
       "hero.from": "Լուսանկարը շարքից",
       "support.short": "Աջակցել",
       "support.eyebrow": "Աջակցել հեղինակին",
-      "support.title": "Շատ շնորհակալ կլինեմ, եթե աջակցեք իմ ստեղծագործությանը։",
+      "support.title": "Նկարում եմ մեքենաներ,\nերազում եմ սեփականի մասին։\nՇնորհակալ կլինեմ, եթե աջակցես իմ ստեղծագործությանը։",
       "support.sub": "Բոլոր լուսանկարները կարելի է անվճար դիտել և ներբեռնել։ Եթե դրանք ձեզ դուր եկան, կարող եք աջակցել ֆինանսապես, ինչպես նաև նշել ինձ Instagram-ում։",
       "support.or": "կամ կարող եք պատճենել քարտի համարը",
       "support.copy": "Պատճենել",
       "support.copied": "Քարտի համարը պատճենված է",
+      "goal.label": "Նպատակ",
+      "goal.title": "Ես նկարում եմ ուրիշների մեքենաները։ Ժամանակն է նկարել իմը։",
+      "goal.sub": "Գումար եմ հավաքում սեփական մեքենայի համար, որպեսզի հասնեմ այնտեղ, ուր երթուղայինները չեն գնում, և այնտեղից բերեմ նոր շարքեր։ Յուրաքանչյուր նվիրատվություն մոտեցնում է դրանցից առաջինը։",
       "support.soon": "Այստեղ կլինի վճարման հղումը (config.js)",
       "series.back": "Բոլոր շարքերը",
       "series.zip": "Ներբեռնել բոլորը · ZIP",
@@ -394,7 +403,46 @@
   $("#toast-cta").addEventListener("click", function () { toastEl.hidden = true; });
 
   /* ---------------- support block ---------------- */
+  function renderGoal() {
+    var g = CFG.goal || {}, box = $("#goal");
+    if (!box) return;
+    var img = $("#goal-img");
+    box.classList.toggle("no-photo", !(g.show && g.photo));
+    img.hidden = !(g.show && g.photo);
+    if (g.show && g.photo && img.getAttribute("src") !== BASE + g.photo) img.src = BASE + g.photo;
+    img.style.objectPosition = g.photoPosition || "50% 50%";
+    box.style.setProperty("--dim", g.dim != null ? g.dim : 0.45);
+    box.style.setProperty("--veil", g.veil === "dark" ? "8 12 18" : "238 242 245");
+    var has = g.target > 0;
+    $("#goal-progress").hidden = !has;
+    if (has) {
+      var pct = Math.max(0, Math.min(100, (g.raised || 0) / g.target * 100));
+      $("#goal-fill").style.width = pct.toFixed(1) + "%";
+      var fmt = function (n) { return Number(n || 0).toLocaleString(lang === "en" ? "en-US" : lang === "hy" ? "hy-AM" : "ru-RU"); };
+      $("#goal-nums").textContent = fmt(g.raised) + " / " + fmt(g.target) + " " + (g.currency || "֏") + " · " + Math.round(pct) + "%";
+    }
+  }
+
+  // ставит номер карты в заданную точку фото (cardAt: [x%, y%] от размеров самого снимка)
+  function placeGoalCard() {
+    var g = CFG.goal || {}, box = $("#goal"), img = $("#goal-img"), txt = box && box.querySelector(".goal-text");
+    if (!txt) return;
+    if (!(g.show && g.photo && g.cardAt && img.naturalWidth)) { txt.style.cssText = ""; return; }
+    var W = box.clientWidth, H = box.clientHeight, w = img.naturalWidth, h = img.naturalHeight;
+    var s = Math.max(W / w, H / h), rw = w * s, rh = h * s;
+    var pos = String(g.photoPosition || "50% 50%").split(/\s+/).map(function (v) { return parseFloat(v) / 100; });
+    var ox = (W - rw) * (isNaN(pos[0]) ? .5 : pos[0]), oy = (H - rh) * (isNaN(pos[1]) ? .5 : pos[1]);
+    var x = ox + rw * g.cardAt[0] / 100, y = oy + rh * g.cardAt[1] / 100;
+    var hw = txt.offsetWidth / 2, hh = txt.offsetHeight / 2;
+    x = Math.min(Math.max(x, hw), W - hw); y = Math.min(Math.max(y, hh), H - hh);
+    txt.style.cssText = "position:absolute;padding:0;left:" + x + "px;top:" + y + "px;transform:translate(-50%,-50%)";
+  }
+  $("#goal-img").addEventListener("load", placeGoalCard);
+  window.addEventListener("resize", placeGoalCard);
+
   function renderSupport() {
+    renderGoal();
+    placeGoalCard();
     var links = (CFG.payLinks || []).filter(function (l) { return l.url || CFG.previewEmptyLinks; });
     $("#pay-links").innerHTML = links.map(function (l) {
       return l.url

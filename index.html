@@ -38,20 +38,29 @@
 
 <section class="support" id="support" aria-labelledby="support-title">
   <div class="wrap support-inner">
-    <h2 id="support-title" data-i18n="support.title">Буду вам очень благодарен, если поддержите моё творчество!</h2>
+    <h2 id="support-title" data-i18n="support.title">Снимаю автомобили, мечтаю о своём. Буду благодарен, если поддержишь моё творчество!</h2>
     <p class="support-sub" data-i18n="support.sub"></p>
     <a class="ig-link" id="support-ig" href="#" target="_blank" rel="noopener" hidden aria-label="Instagram"><span class="ig-ico"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span><b id="support-ig-name"></b></a>
-    <div class="pay-links" id="pay-links"></div>
-    <div class="card-block" id="card-block">
-      <p class="or" data-i18n="support.or">или можете скопировать номер карты</p>
-      <div class="card-row">
-        <span class="card-num" id="card-num"></span>
-        <button type="button" class="copy" id="copy-card" aria-label="Copy">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="8" y="8" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V4H4v12h4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-          <span data-i18n="support.copy">Копировать</span>
-        </button>
+    <div class="goal" id="goal">
+      <img class="goal-img" id="goal-img" alt="" loading="lazy" decoding="async">
+      <div class="goal-text">
+        <div class="pay-links" id="pay-links"></div>
+        <div class="card-block" id="card-block">
+          <p class="or" data-i18n="support.or">или можете скопировать номер карты</p>
+          <div class="card-row">
+            <span class="card-num" id="card-num"></span>
+            <button type="button" class="copy" id="copy-card" aria-label="Copy">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="8" y="8" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V4H4v12h4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span data-i18n="support.copy">Копировать</span>
+            </button>
+          </div>
+          <p class="card-holder" id="card-holder"></p>
+        </div>
+        <div class="goal-progress" id="goal-progress" hidden>
+          <div class="goal-bar"><span id="goal-fill"></span></div>
+          <p class="goal-nums" id="goal-nums"></p>
+        </div>
       </div>
-      <p class="card-holder" id="card-holder"></p>
     </div>
   </div>
 </section>

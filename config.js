@@ -14,6 +14,23 @@ window.SITE_CONFIG = {
     { url: "", label: { ru: "Оплатить картой", en: "Pay by card", hy: "Վճարել քարտով" } }
   ],
 
+  // Цель «собираю на машину» в блоке поддержки.
+  // target — сколько нужно собрать, raised — сколько уже собрано (обновляйте вручную).
+  // Если target: 0 — полоска прогресса не показывается, остаётся только текст.
+  goal: {
+    show: true,
+    photo: "photos/garage-masters-tuning-show/lg/9255.jpg",   // Honda S2000 в темноте
+    photoPosition: "50% 100%",  // 100% — низ фото не обрезается, обрезается только верх
+    cardAt: [50, 79],           // где на фото стоит номер карты: [% по ширине, % по высоте снимка]. Уберите строку — будет по центру
+    // Lancer Evo 3/4: photo: "photos/garage-masters-tuning-show/lg/9221_2.jpg", photoPosition: "50% 55%",
+    // вернуть Мерседес: photo: "photos/mercedes-benz-sl/lg/9067.jpg", photoPosition: "70% 50%",
+    veil: "light",   // дымка поверх фото: "light" — светлая, "dark" — тёмная
+    dim: 0,          // сила дымки: 0 — без неё, 1 — фото не видно (для светлых фото ставьте 0.45)
+    target: 0,
+    raised: 0,
+    currency: "֏"
+  },
+
   // Контакты в подвале. Пустые не показываются.
   contacts: {
     instagram: "https://www.instagram.com/mizinalexander/",
