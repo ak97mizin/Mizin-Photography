@@ -187,7 +187,7 @@ img.lazy { opacity: 0; } img.lazy.loaded { opacity: 1; }
 .support-inner { padding-block: 80px 88px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
 .support h2 { white-space: pre-line; max-width: 26ch; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 500; }
 .support-sub { margin: 0; max-width: 54ch; color: #b4bdc9; }
-.ig-link { display: inline-flex; align-items: center; gap: 10px; padding-bottom: 3px; border-bottom: 1px solid #3a4656; font: 400 15px/1.2 var(--f-head); font-stretch: 80%; letter-spacing: .06em; transition: border-color .2s, color .2s; }
+.ig-link { margin-top: -14px; display: inline-flex; align-items: center; gap: 10px; padding-bottom: 3px; border-bottom: 1px solid #3a4656; font: 400 15px/1.2 var(--f-head); font-stretch: 80%; letter-spacing: .06em; transition: border-color .2s, color .2s; }
 .ig-ico { display: inline-grid; place-items: center; width: 20px; height: 20px; font-size: 20px; line-height: 1; color: var(--fg); }
 .ig-ico svg { width: 20px; height: 20px; }
 .ig-link:hover .ig-ico { color: var(--accent-ink); }
