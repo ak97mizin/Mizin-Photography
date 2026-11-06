@@ -14,8 +14,8 @@
       "hero.from": "Фото из серии",
       "support.short": "Поддержать",
       "support.eyebrow": "Поддержать автора",
-      "support.title": "Я буду вам очень благодарен, если поддержите моё творчество!",
-      "support.sub": "Все фотографии на сайте можно смотреть и скачивать бесплатно в полном качестве. Если они вам пригодились или просто понравились, любая сумма помогает снимать дальше.",
+      "support.title": "Буду вам очень благодарен, если поддержите моё творчество!",
+      "support.sub": "Все фотографии можно смотреть и скачивать бесплатно. Если они вам понравились, можно поддержать финансово, а также отметить в инстаграме.",
       "support.or": "или можете скопировать номер карты",
       "support.copy": "Копировать",
       "support.copied": "Номер карты скопирован",
@@ -39,8 +39,8 @@
       "hero.from": "From the series",
       "support.short": "Support",
       "support.eyebrow": "Support the author",
-      "support.title": "I'd be truly grateful if you supported my work!",
-      "support.sub": "Every photo on this site is free to view and download in full quality. If they were useful to you or you simply liked them, any amount helps me keep shooting.",
+      "support.title": "I'd be very grateful if you supported my work!",
+      "support.sub": "All photos are free to view and download. If you liked them, you can support me financially or tag me on Instagram.",
       "support.or": "or copy the card number",
       "support.copy": "Copy",
       "support.copied": "Card number copied",
@@ -65,7 +65,7 @@
       "support.short": "Աջակցել",
       "support.eyebrow": "Աջակցել հեղինակին",
       "support.title": "Շատ շնորհակալ կլինեմ, եթե աջակցեք իմ ստեղծագործությանը։",
-      "support.sub": "Կայքի բոլոր լուսանկարները կարելի է անվճար դիտել և ներբեռնել լրիվ որակով։ Եթե դրանք օգտակար եղան կամ պարզապես դուր եկան, ցանկացած գումար օգնում է շարունակել նկարել։",
+      "support.sub": "Բոլոր լուսանկարները կարելի է անվճար դիտել և ներբեռնել։ Եթե դրանք ձեզ դուր եկան, կարող եք աջակցել ֆինանսապես, ինչպես նաև նշել ինձ Instagram-ում։",
       "support.or": "կամ կարող եք պատճենել քարտի համարը",
       "support.copy": "Պատճենել",
       "support.copied": "Քարտի համարը պատճենված է",
@@ -121,8 +121,7 @@
     var p = photo(s, s.cover);
     return '<a class="s-card zoom" href="#' + s.slug + '" style="--c:' + p.color + '">' +
       '<img class="lazy" loading="lazy" decoding="async" src="' + src(s, p, "sm") + '" srcset="' + srcset(s, p) + '" sizes="' + sizes + '" alt="' + esc(L(s.title)) + '">' +
-      '<div class="s-cap"><h3>' + esc(L(s.title)) + '</h3><p>' + esc(metaLine(s)) + '</p></div>' +
-      '<span class="arrow">' + ARROW + '</span></a>';
+      '<div class="s-cap"><h3>' + esc(L(s.title)) + '</h3><p>' + esc(metaLine(s)) + '</p></div></a>';
   }
 
   /* ---------------- views ---------------- */
@@ -408,10 +407,12 @@
     $("#card-num").textContent = num;
     $("#card-holder").textContent = (CFG.card && CFG.card.holder) || "";
     $("#card-holder").hidden = !(CFG.card && CFG.card.holder);
-    if (!links.length) $("#card-block .or").hidden = true;
+    $("#card-block .or").hidden = !links.length;
 
     var c = CFG.contacts || {}, f = [];
-    if (c.instagram) f.push('<a href="' + esc(c.instagram) + '" target="_blank" rel="noopener">Instagram</a>');
+    var ig = $("#support-ig");
+    if (ig) { ig.hidden = !c.instagram; if (c.instagram) { ig.href = c.instagram; $("#support-ig-name").textContent = "@" + c.instagram.replace(/\/+$/, "").split("/").pop(); } }
+    if (c.instagram) f.push('<a class="foot-ig" href="' + esc(c.instagram) + '" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i>@' + esc(c.instagram.replace(/\/+$/, "").split("/").pop()) + '</a>');
     if (c.telegram) f.push('<a href="' + esc(c.telegram) + '" target="_blank" rel="noopener">Telegram</a>');
     if (c.email) f.push('<a href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a>');
     $("#foot-links").innerHTML = f.join("");

@@ -7,9 +7,10 @@
   --line: #1e2835;
   --fg: #e8ecf1;
   --muted: #8994a5;
-  --accent: #067f82;      /* ≈ RAL 5018, чуть темнее — чтобы белый текст читался */
-  --accent-hi: #0a9497;
-  --accent-ink: #4fc3c5;  /* акцент для текста на тёмном */
+  --accent: #68e0c6;
+  --accent-hi: #8ce9d5;
+  --accent-ink: #68e0c6;  /* акцент для текста на тёмном */
+  --on-accent: #0b1017;   /* текст на акцентной кнопке — светлый фон, поэтому тёмный текст */
   --scrim: rgba(6, 10, 15, .72);
 
   --f-head: "Fira Sans Condensed", "Noto Sans Armenian", "Arial Narrow", "Roboto Condensed", sans-serif;
@@ -58,7 +59,7 @@ h1, h2, h3 { font-family: var(--f-head); font-stretch: 80%; font-weight: 500; te
   white-space: nowrap;
 }
 .btn-sm { height: 36px; padding: 0 14px; font-size: 13px; }
-.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent { background: var(--accent); color: var(--on-accent); font-weight: 600; }
 .btn-accent:hover { background: var(--accent-hi); }
 .btn-ghost { border: 1px solid #3a4656; color: var(--fg); }
 .btn-ghost:hover { border-color: var(--fg); }
@@ -186,16 +187,27 @@ img.lazy { opacity: 0; } img.lazy.loaded { opacity: 1; }
 .support-inner { padding-block: 80px 88px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
 .support h2 { max-width: 20ch; font-size: clamp(30px, 4.6vw, 58px); line-height: 1.04; font-weight: 500; }
 .support-sub { margin: 0; max-width: 54ch; color: #b4bdc9; }
+.ig-link { display: inline-flex; align-items: center; gap: 10px; padding-bottom: 3px; border-bottom: 1px solid #3a4656; font: 400 15px/1.2 var(--f-head); font-stretch: 80%; letter-spacing: .06em; transition: border-color .2s, color .2s; }
+.ig-ico { display: inline-grid; place-items: center; width: 20px; height: 20px; font-size: 20px; line-height: 1; color: var(--fg); }
+.ig-ico svg { width: 20px; height: 20px; }
+.ig-link:hover .ig-ico { color: var(--accent-ink); }
+.foot-ig { display: inline-flex; align-items: center; gap: 8px; }
+.foot-ig svg { width: 16px; height: 16px; }
+.ig-link b { font-weight: 500; color: var(--fg); }
+.ig-link:hover { border-color: var(--accent-ink); }
+.ig-link:hover b { color: var(--accent-ink); }
 .pay-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 8px; }
 .pay-links .btn { height: 54px; padding: 0 30px; font-size: 15px; }
 .card-block { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 14px; }
-.or { margin: 0; color: var(--muted); font-size: 14px; }
-.card-row { display: flex; align-items: center; gap: 4px; border: 1px solid var(--line); background: var(--bg-2); padding: 6px 6px 6px 20px; max-width: 100%; }
-.card-num { font: 400 clamp(19px, 3vw, 26px)/1 var(--f-head); font-stretch: 80%; letter-spacing: .12em; font-variant-numeric: tabular-nums; user-select: all; white-space: nowrap; overflow-x: auto; }
-.copy { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; color: var(--muted); font: 500 12px/1 var(--f-head); font-stretch: 80%; letter-spacing: .14em; text-transform: uppercase; }
-.copy:hover, .copy.done { color: var(--accent-ink); }
+.or { margin: 0; color: var(--muted); font-size: 16px; }
+.card-row { display: flex; align-items: stretch; border: 2px solid var(--accent); background: var(--bg-2); max-width: 100%; }
+.card-row .card-num { padding: 16px 22px; }
+.card-num { font: 400 clamp(19px, 3vw, 26px)/1 var(--f-head); font-stretch: 80%; letter-spacing: .12em; font-variant-numeric: tabular-nums; user-select: all; white-space: nowrap; overflow: visible; }
+.copy { display: inline-flex; align-items: center; gap: 8px; padding: 0 20px; background: var(--accent); color: var(--on-accent); font-weight: 600; transition: background-color .2s; font: 500 13px/1 var(--f-head); font-stretch: 80%; letter-spacing: .14em; text-transform: uppercase; }
+.copy { font-weight: 600; }
+.copy:hover, .copy.done { background: var(--accent-hi); }
 .card-holder { margin: 0; font-size: 13px; color: var(--muted); }
-@media (max-width: 480px) { .copy span { display: none; } .card-row { padding-left: 14px; } }
+@media (max-width: 480px) { .copy span { display: none; } .copy { padding: 0 16px; } .card-row .card-num { padding: 14px 16px; } }
 
 /* ---------- footer ---------- */
 .foot-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 28px; padding-block: 28px max(28px, env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }

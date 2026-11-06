@@ -15,9 +15,9 @@ window.SERIES = [
   },
   "date": "2026",
   "text": {
-   "ru": "Дорога через поля, монастырь у подножия Арарата и закат, ради которого сюда приезжают.",
-   "en": "A road through the fields, the monastery at the foot of Ararat, and the sunset people come here for.",
-   "hy": "Ճանապարհ դաշտերի միջով, վանքը Արարատի ստորոտին և մայրամուտը, որի համար մարդիկ գալիս են այստեղ։"
+   "ru": "Монастырь XVII века стоит над подземельем, где, по преданию, 13 лет держали Григория Просветителя. Отсюда и название: «хор вирап» — «глубокая яма». С холма открывается один из лучших видов на Арарат.",
+   "en": "The 17th-century monastery stands over the pit where, according to tradition, Gregory the Illuminator was held for 13 years. That is where the name comes from: khor virap means “deep pit”. The hill offers one of the best views of Ararat.",
+   "hy": "17-րդ դարի վանքը կանգնած է այն վիրապի վրա, որտեղ, ըստ ավանդության, 13 տարի պահել են Գրիգոր Լուսավորչին։ Այստեղից էլ անունը՝ «խոր վիրապ»։ Բլրից բացվում է Արարատի լավագույն տեսարաններից մեկը։"
   },
   "cover": "0101",
   "hero": [
@@ -150,15 +150,15 @@ window.SERIES = [
    "hy": "Armenia Airfest"
   },
   "place": {
-   "ru": "Армения",
-   "en": "Armenia",
-   "hy": "Հայաստան"
+   "ru": "Егвард",
+   "en": "Yeghvard",
+   "hy": "Եղվարդ"
   },
   "date": "2026",
   "text": {
-   "ru": "Фестиваль под открытым небом: лёгкие самолёты, воздушные змеи, гимнастка на полотнах и один очень важный вопрос — от полудня до луны.",
-   "en": "An open-sky festival: light aircraft, kites, an aerial silks act and one very important question — from midday to moonrise.",
-   "hy": "Փառատոն բաց երկնքի տակ՝ թեթև ինքնաթիռներ, օդապարիկներ, օդային մարմնամարզուհի և մի շատ կարևոր հարց՝ կեսօրից մինչև լուսնի ծագումը։"
+   "ru": "Ежегодный фестиваль малой авиации на аэродроме Sky Club в Егварде: лёгкие самолёты, вертолёты, парапланы, воздушные змеи и музыка — от полудня до восхода луны.",
+   "en": "An annual small-aviation festival at the Sky Club airfield in Yeghvard: light aircraft, helicopters, paragliders, kites and music, from midday to moonrise.",
+   "hy": "Փոքր ավիացիայի ամենամյա փառատոն Եղվարդի Sky Club օդանավակայանում՝ թեթև ինքնաթիռներ, ուղղաթիռներ, պարապլաններ, օդապարիկներ և երաժշտություն՝ կեսօրից մինչև լուսնի ծագումը։"
   },
   "cover": "9760",
   "hero": [
@@ -363,9 +363,9 @@ window.SERIES = [
    "hy": "Garage Masters Tuning Show"
   },
   "place": {
-   "ru": "Армения",
-   "en": "Armenia",
-   "hy": "Հայաստան"
+   "ru": "Ереван",
+   "en": "Yerevan",
+   "hy": "Երևան"
   },
   "date": "2026",
   "text": {
@@ -521,9 +521,9 @@ window.SERIES = [
   "num": 10,
   "slug": "mercedes-benz-sl",
   "title": {
-   "ru": "Mercedes-Benz SL",
-   "en": "Mercedes-Benz SL",
-   "hy": "Mercedes-Benz SL"
+   "ru": "Mercedes-Benz SLC",
+   "en": "Mercedes-Benz SLC",
+   "hy": "Mercedes-Benz SLC"
   },
   "place": {
    "ru": "Ереван",
@@ -532,9 +532,9 @@ window.SERIES = [
   },
   "date": "2026",
   "text": {
-   "ru": "Серебристое купе семидесятых на улицах Еревана: между колоннами из розового туфа, в профиль и крупным планом.",
-   "en": "A silver seventies coupé in the streets of Yerevan: between pink tuff columns, in profile and up close.",
-   "hy": "Յոթանասունականների արծաթագույն կուպեն Երևանի փողոցներում՝ վարդագույն տուֆե սյուների միջև, կողքից և մոտիկից։"
+   "ru": "Купе SLC (C107, 1971–1981) — четырёхместная версия родстера SL поколения R107. Дизайн — Фридрих Гайгер и Йозеф Галлитцендёрфер; Гайгер до этого нарисовал 300 SL «Крыло чайки» и довоенный 540K. Узнаваемая деталь именно SLC — жалюзи в задних боковых окнах. А рифлёные задние фонари, которые остаются заметными даже под слоем грязи, потом на десятилетия стали фирменной чертой Mercedes.",
+   "en": "The SLC coupé (C107, 1971–1981) is the four-seat version of the R107 SL roadster. It was styled by Friedrich Geiger and Joseph Gallitzendörfer; Geiger had earlier drawn the 300 SL Gullwing and the pre-war 540K. The detail that marks out the SLC is the louvres in its rear side windows. Its ribbed tail lights, which stay visible even under a layer of dirt, went on to become a Mercedes signature for decades.",
+   "hy": "SLC կուպեն (C107, 1971–1981) R107 սերնդի SL ռոդսթերի չորստեղանի տարբերակն է։ Դիզայնը Ֆրիդրիխ Գայգերինն ու Յոզեֆ Գալիցենդյորֆերինն է. Գայգերը մինչ այդ նկարել էր 300 SL «Ճայի թև»-ը և նախապատերազմյան 540K-ն։ SLC-ի ճանաչելի մանրուքը հետևի կողային պատուհանների շերտավարագույրներն են։ Իսկ ակոսավոր հետևի լապտերները, որոնք տեսանելի են մնում նույնիսկ ցեխի տակ, տասնամյակներ շարունակ դարձան Mercedes-ի բնորոշ գիծը։"
   },
   "cover": "9024",
   "hero": [
@@ -590,9 +590,9 @@ window.SERIES = [
   },
   "date": "2026",
   "text": {
-   "ru": "Город сверху и снизу: мосты над ущельем, зелень, вода и длинный тоннель.",
-   "en": "The city from above and below: bridges over the gorge, greenery, water and a long tunnel.",
-   "hy": "Քաղաքը վերևից և ներքևից՝ կամուրջներ կիրճի վրա, կանաչ, ջուր և երկար թունել։"
+   "ru": "Река Раздан вытекает из Севана и прорезает Ереван глубоким ущельем. Внизу — зелень, вода и тишина, наверху — мосты и город.",
+   "en": "The Hrazdan river flows out of Lake Sevan and cuts a deep gorge through Yerevan. Below are greenery, water and quiet; above, bridges and the city.",
+   "hy": "Հրազդան գետը սկիզբ է առնում Սևանից և խոր կիրճով կտրում անցնում է Երևանը։ Ներքևում՝ կանաչ, ջուր և լռություն, վերևում՝ կամուրջներ և քաղաքը։"
   },
   "cover": "8544",
   "hero": [
@@ -630,7 +630,7 @@ window.SERIES = [
     "id": "8524",
     "w": 2010,
     "h": 3301,
-    "color": "#484847"
+    "color": "#484747"
    },
    {
     "id": "8544",
@@ -701,7 +701,7 @@ window.SERIES = [
     "id": "8169",
     "w": 3986,
     "h": 2657,
-    "color": "#0b0b0c"
+    "color": "#0b0b0d"
    }
   ]
  }

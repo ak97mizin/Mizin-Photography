@@ -11,13 +11,12 @@ window.SITE_CONFIG = {
   // Кнопки онлайн-оплаты (ссылки на страницу доната / оплаты).
   // Вставьте ссылку в url. Кнопки с пустым url на сайте не показываются.
   payLinks: [
-    { url: "", label: { ru: "Поддержать через Boosty", en: "Support on Boosty", hy: "Աջակցել Boosty-ով" } },
     { url: "", label: { ru: "Оплатить картой", en: "Pay by card", hy: "Վճարել քարտով" } }
   ],
 
   // Контакты в подвале. Пустые не показываются.
   contacts: {
-    instagram: "",   // "https://instagram.com/..."
+    instagram: "https://www.instagram.com/mizinalexander/",
     telegram: "",    // "https://t.me/..."
     email: ""        // "name@example.com"
   },
