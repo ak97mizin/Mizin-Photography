@@ -21,7 +21,7 @@ window.SITE_CONFIG = {
     show: true,
     photo: "photos/garage-masters-tuning-show/lg/9255.jpg",   // Honda S2000 в темноте
     photoPosition: "50% 100%",  // 100% — низ фото не обрезается, обрезается только верх
-    cardAt: [50, 79],           // где на фото стоит номер карты: [% по ширине, % по высоте снимка]. Уберите строку — будет по центру
+    cardAt: [50, 78.8],           // где на фото стоит номер карты: [% по ширине, % по высоте снимка]. Уберите строку — будет по центру
     // Lancer Evo 3/4: photo: "photos/garage-masters-tuning-show/lg/9221_2.jpg", photoPosition: "50% 55%",
     // вернуть Мерседес: photo: "photos/mercedes-benz-sl/lg/9067.jpg", photoPosition: "70% 50%",
     veil: "light",   // дымка поверх фото: "light" — светлая, "dark" — тёмная

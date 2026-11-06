@@ -200,7 +200,8 @@ img.lazy { opacity: 0; } img.lazy.loaded { opacity: 1; }
 .pay-links .btn { height: 54px; padding: 0 30px; font-size: 15px; }
 .card-block { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 14px; }
 /* goal: photo of the car with the card number centred on it */
-.goal { position: relative; width: min(100%, 980px); min-height: clamp(260px, 34vw, 420px); margin-top: 18px; overflow: hidden; background: var(--bg-2); display: flex; align-items: center; justify-content: center; }
+/* во всю ширину экрана; пропорция 2.3:1 оставляет пятно света на капоте и решётку целиком */
+.goal { position: relative; width: 100vw; max-width: none; aspect-ratio: 2.3 / 1; min-height: 210px; max-height: 85vh; margin-top: 18px; overflow: hidden; background: var(--bg-2); display: flex; align-items: center; justify-content: center; }
 .goal-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .goal-text { position: relative; z-index: 1; padding: 28px 16px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .goal .card-block { align-items: center; margin-top: 0; }
@@ -208,6 +209,10 @@ img.lazy { opacity: 0; } img.lazy.loaded { opacity: 1; }
 .goal::after { content: ""; position: absolute; inset: 0; background: rgb(var(--veil, 238 242 245) / var(--dim, .45)); pointer-events: none; }
 .goal.no-photo::after { display: none; }
 .goal .card-row { box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+/* карточка растёт вместе с фото, чтобы закрывать номерной знак целиком */
+.goal .card-row .card-num { font-size: clamp(18px, 2.4vw, 40px); padding: clamp(14px, 2.2vw, 32px) clamp(16px, 2vw, 30px); }
+.goal .copy { font-size: clamp(12px, 1.1vw, 17px); padding: 0 clamp(14px, 1.6vw, 28px); }
+.goal .copy svg { width: clamp(16px, 1.4vw, 22px); height: auto; }
 .goal.no-photo { min-height: 0; background: none; }
 .goal-label { margin: 0; align-self: flex-start; padding: 6px 10px; background: var(--accent); color: var(--on-accent); font: 600 12px/1 var(--f-head); font-stretch: 80%; letter-spacing: .18em; text-transform: uppercase; }
 .goal-title { margin: 0; font: 500 clamp(26px, 3.4vw, 40px)/1.05 var(--f-head); font-stretch: 80%; text-transform: uppercase; letter-spacing: .02em; color: #fff; text-wrap: balance; }
@@ -217,7 +222,7 @@ img.lazy { opacity: 0; } img.lazy.loaded { opacity: 1; }
 .goal-bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width 1.2s ease; }
 .goal-nums { margin: 0; font: 500 13px/1 var(--f-head); font-stretch: 80%; letter-spacing: .12em; color: #c9d1dc; font-variant-numeric: tabular-nums; }
 @media (max-width: 640px) {
-  .goal { min-height: 300px; }
+  .goal { min-height: 210px; }
 }
 .or { margin: 0; color: var(--muted); font-size: 16px; }
 .card-row { display: flex; align-items: stretch; border: 2px solid var(--accent); background: var(--bg-2); max-width: 100%; }
